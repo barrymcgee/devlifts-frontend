@@ -1,0 +1,85 @@
+/**
+This project follows the ITCSS architecture:
+http://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528
+*/
+
+/**
+Declaration Structure:
+Functions
+Positioning
+Display & Box Model
+Color
+Text
+Other
+Responsive
+*/
+
+/*
+
+01. Settings
+
+If you are using a preprocessor, start here. This holds any global settings for your project. I'd like to stress the word global – this layer should only house settings that need to be accessed from anywhere. Settings like $heading-size-1 should be defined in the Headings partial. This ensures this layer stays nice and slim, and means that most settings can be found alongside the code that uses them, making finding things far simpler.
+
+Examples of global settings might be things like the base font size, colour palettes, config (for example, $environment: dev;) and so on.
+
+*/
+
+html {
+  /* Global Colors */
+  --primaryGreen: #1BBC9B;
+  --primaryBlue: #34495E;
+  --black: #272727;
+  --grey: #636363;
+  --lightGrey: #F7F7F7;
+
+  /* Site Background Color */
+  --siteBGColor: #fff;
+
+  /* Base Font Size */
+  --baseFontSize: 16px;
+
+  /* Content Width */
+  --maxContentWidth: 1960px;
+
+  /* Media Breakpoints */
+  --tablet: 768px;
+  --desktop: 1024px;
+}
+
+/* Global Fonts */
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("fonts/proxima-nova-regular.otf");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("fonts/proxima-nova-bold.otf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("fonts/proxima-nova-semibold.otf");
+  font-weight: 600;
+}
+
+/*
+
+02. Tools
+
+The next layer houses your globally available tooling – namely mixins and functions. Any mixin or function that does not need accessing globally should belong in the partial to which it relates. The Tools layer comes after the Settings layer because a mixin may require one of the global settings as a default parameter. Examples of global tools might be gradient mixins, font-sizing mixins and so on.
+
+*/
+
+/*********************
+See tools.js for Tools
+*********************/
+
+/*
+
+03. Generic
+
+The Generic layer is the first one that actually produces any CSS. It houses very high-level, far reaching styles. This layer is seldom modified, and is usually the same across any projects you work on. It contains things like Normalize.css, global box-sizing rules, CSS resets and so on. The Generic layer affects a lot of the DOM, hence it being nice and wide in the Triangle model, and occurring very early on.
+
+*/
